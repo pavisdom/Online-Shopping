@@ -1,0 +1,24 @@
+<%
+                        try{
+                        	Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        	//connect to database
+                			Connection myc = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useSSL=false", "root", "root");
+                			//create statement
+                			Statement mys = myc.createStatement();
+                			
+                			//execute sql query
+                			ResultSet rs = mys.executeQuery("select * from students");
+                			
+                			//process results
+                			while(rs.next()) {%>
+                				<a href="#"><%=rs.getString("sname") %>	</a>
+                        	
+                        <%}
+                        catch(Exception e){
+                        	e.printStackTrace();
+                        }
+                        %> -->
+                         
+                        <a href="#">Electronics</a>
+                        <a href="#">Cloths</a>
+                        <a href="#">Gifts</a>
