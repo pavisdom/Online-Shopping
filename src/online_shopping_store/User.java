@@ -12,7 +12,7 @@ public class User implements DBConnector,Validation{
 	private String email;
 	private String cpwd;
 	private String ciurl;
-	private static User currentUser = null;
+	public static User currentUser = null;
 	
 	private User(int cid) { //private constructor to exist user
 		// TODO set values where userID = cid
@@ -86,6 +86,16 @@ public class User implements DBConnector,Validation{
 		return currentUser;
 	}
 	
+	public static void logout(){
+		currentUser = null;
+	}
+	
+	public static boolean isLogged() {
+		if(currentUser == null)
+			return false;
+		return true;
+	}
+	
 	public void syncDB() { // override dbconnector method
 		try {
 			ResultSet user = DBConnector.DBquery("select * from customers where userID = "+this.cid);
@@ -110,6 +120,7 @@ public class User implements DBConnector,Validation{
 			DBConnector.newConnection().createStatement().executeUpdate("update customers set cName = '"+this.cname+"' where userID = "+this.cid);
 			DBConnector.newConnection().createStatement().executeUpdate("update customers set address = '"+this.cAddress+"' where userID = "+this.cid);
 			DBConnector.newConnection().createStatement().executeUpdate("update customers set email = '"+this.email+"' where userID = "+this.cid);
+			DBConnector.newConnection().createStatement().executeUpdate("update customers set password = '"+this.cpwd+"' where userID = "+this.cid);
 			DBConnector.newConnection().createStatement().executeUpdate("update customers set pictureURL = '"+this.ciurl+"' where userID = "+this.cid);
 		} catch (SQLException e) {
 			e.printStackTrace();

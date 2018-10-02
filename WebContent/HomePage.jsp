@@ -16,6 +16,7 @@
 <body>
     <div id="wrapper">
     <jsp:include page="/Header.jsp"></jsp:include>
+    <h1>${userlog}</h1>
     </div>
     
     </body>

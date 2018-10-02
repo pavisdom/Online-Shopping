@@ -9,14 +9,16 @@ import java.util.ArrayList;
 public class testproject {
 
 	public static void main(String[] args) {
-		String a = "pavithra";
-		String b = "pavithra";
-		if(Validation.matchPassword(a, b)) {
-			System.out.println("a == b");
+		String a = "123";
+		String b = "11";
+		if(Login.validatePwd(a, b)) {
+			System.out.println("pwd currect");
 		}
 		else {
-			System.out.println("a!=b");
+			System.out.println("pwd wrong");
 		}
+		
+		
 		
 		
 	}

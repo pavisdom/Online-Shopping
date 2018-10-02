@@ -34,13 +34,7 @@ public class SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String cName,Address,cemail,cpassword,crpassword,ciurl;
-		cName = request.getParameter("cName");
-		Address = request.getParameter("cAddress");
-		cemail = request.getParameter("cemail");
-		cpassword = request.getParameter("cPassword");
-		crpassword = request.getParameter("crPassword");
-		//Object a = "bla bla";
+		
 		
 		
 		

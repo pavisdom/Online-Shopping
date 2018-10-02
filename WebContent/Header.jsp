@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
-<%@ page import = "online_shopping_store.categories" %>
+<%@ page import = "online_shopping_store.*" %>
 <%@ page import = "java.util.ArrayList" %>
 
 
@@ -19,7 +19,7 @@
         <div id="subheader">
             <div class="container">
                 <p>Online java web application</p>
-                <a href="\OnlineShopping\SignUp.jsp">Sign up</a>
+                
                 <a href="#">Sale here</a>
                 <a href="#">About us</a>
                 <a href="#">Home</a>
@@ -38,7 +38,14 @@
             </div>
             
             <div id="action-panel">
-                <li><a href="#"><img alt="Login" src="WEB-IMG/login.png" width="40px" height="40px"><br> Login</a>  </li>
+            	
+                <li><%if(User.isLogged()){ %>
+                		<img alt="Login" src="WEB-IMG/login.png" width="40px" height="40px"><br>
+                		<a href="Profile">Profile</a> | <a href = "HomePage.jsp" onclick = "<% User.logout();%>">Logout</a>
+                	<%}else{ %>
+                		<img alt="Login" src="WEB-IMG/login.png" width="40px" height="40px"><br>
+                		<a href="Login.jsp">Login</a> | <a href="SignUp.jsp">Sign up </li>
+                		<%} %>
                 <li><a href="#"><img alt="Cart" src="WEB-IMG/shopping_cart.png" width="40px" height="40px"><br>Cart</a>  </li>
             
             </div>
