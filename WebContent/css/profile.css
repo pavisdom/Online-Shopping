@@ -28,3 +28,23 @@
     width: 50%;
     
 }
+.Order-Details{
+    width: 60%;
+    background-color: antiquewhite;
+    border: 1px solid black;}
+
+#submit-btn{
+    padding: 0;
+    height: 30px;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    background-color: #ec7612;
+    border-radius: 2px;
+    margin: 0 auto;
+    float: left;
+    
+}

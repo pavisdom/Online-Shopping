@@ -1,4 +1,4 @@
-package online_shopping_store;
+
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import online_shopping_store.User;
+
 /**
- * Servlet implementation class Profile
+ * Servlet implementation class test
  */
-@WebServlet("/Profile")
-public class Profile extends HttpServlet {
+@WebServlet("/test")
+public class test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Profile() {
+    public test() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,18 +28,18 @@ public class Profile extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		if(User.isLogged()) {
-			request.setAttribute("imgURL", User.getLogedUser().getCiurl());
-			request.setAttribute("cName", User.getLogedUser().getCname());
-			System.out.print(User.getLogedUser().getCname());
-			request.setAttribute("email", User.getLogedUser().getEmail());
-			request.setAttribute("address", User.getLogedUser().getcAddress());
-			request.getRequestDispatcher("/Profile.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("/Login.jsp").forward(request, response);
-		}
+		// TODO Auto-generated method stub
+		request.setAttribute("imgURL", "/cd");
+		request.setAttribute("cName", "Pavithski");
+		//System.out.print(User.getLogedUser().getCname());
+		request.setAttribute("email", "mm.nn@gm.com");
+		request.setAttribute("address", "kandy");
+		request.getRequestDispatcher("/Profile.jsp").forward(request, response);
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

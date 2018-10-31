@@ -12,7 +12,8 @@ public class User implements DBConnector,Validation{
 	private String email;
 	private String cpwd;
 	private String ciurl;
-	public static User currentUser = null;
+	protected static User currentUser = null;
+	protected static User logedUser = null;
 	
 	private User(int cid) { //private constructor to exist user
 		// TODO set values where userID = cid
@@ -88,10 +89,11 @@ public class User implements DBConnector,Validation{
 	
 	public static void logout(){
 		currentUser = null;
+		LoginServlet.destroyUserSession();
 	}
 	
 	public static boolean isLogged() {
-		if(currentUser == null)
+		if(logedUser == null)
 			return false;
 		return true;
 	}
@@ -149,6 +151,12 @@ public class User implements DBConnector,Validation{
 		}
 	}
 	
+	public static User getLogedUser() {
+		return logedUser;
+	}
+	public static void setLogedUser(User logedUser) {
+		User.logedUser = logedUser;
+	}
 	
 
 }

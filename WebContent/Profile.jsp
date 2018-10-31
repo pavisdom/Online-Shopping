@@ -17,7 +17,7 @@
             <div class="image-con"><img src = "${imgURL}"> <br>
                 </div>
             <div class = "profile-details">
-                <h1>${cName}</h1>
+                <h1>${cName}</h1><a href="EditProfile">edit</a>
                 <table class="details-table">
                     <tr>
                         <td>Email</td>
@@ -26,6 +26,24 @@
                     <tr>
                         <td>Address</td>
                         <td>${address}</td>
+                    </tr>
+                </table>
+            </div>
+            <br><br><br><br><br><br>
+            <div>
+                <table class ="Order-Details">
+                   
+                    <tr>
+                        <td width = 5%>#</td>
+                        <td width = 60%>Item Name</td>
+                        <td width = 15%>Quntity</td>
+                        <td width = 20%>States</td>
+                    </tr>
+                    <tr>
+                        <td width = 5%>1</td>
+                        <td width = 60%>Mobile Phone</td>
+                        <td width = 15%>2</td>
+                        <td width = 20%>Shiped</td>
                     </tr>
                 </table>
             </div>
